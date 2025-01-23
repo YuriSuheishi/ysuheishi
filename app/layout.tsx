@@ -1,3 +1,5 @@
+import '@/components/global.css';
+
 export default function RootLayout({
   children,
 }: {
