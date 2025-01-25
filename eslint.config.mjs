@@ -1,18 +1,16 @@
-import globals from "globals";
+import { FlatCompat } from '@eslint/eslintrc'
 
-/** @type {import('eslint').Linter.Config[]} */
-export default [
-  {
-    files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"]},
-    {
-      languageOptions: { 
-        globals: globals.browser, 
-      }
-    },
-    {
-      rules: {
-          semi: "error",
-          "prefer-const": "error"
-      }
-    },
-];
+const compat = new FlatCompat({
+  // import.meta.dirname is available after Node.js v20.11.0
+  baseDirectory: import.meta.dirname,
+})
+
+const eslintConfig = [
+  ...compat.config({
+    extends: ['next', 'prettier'],
+  }),{
+    ignores: [".next/*"]
+  }
+]
+
+export default eslintConfig
