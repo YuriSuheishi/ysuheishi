@@ -72,7 +72,7 @@ Este projeto está em desenvolvimento. Mais detalhes serão adicionados em breve
 ┌── public/          # Arquivos estáticos (imagens, ícones, etc.)
 └── src/
     ├── components/ # Componentes reutilizáveis
-    ├── pages/      # Páginas do Next.js
+    ├── app/        # Páginas do Next.js
     ├── styles/     # Estilos globais e temáticos
     ├── utils/      # Funções utilitárias
     └── posts/      # Arquivos Markdown (.md) para postagens
