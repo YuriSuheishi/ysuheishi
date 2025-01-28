@@ -1,0 +1,119 @@
+// Variables
+:root {
+  --color-background: #ffffff;
+  --color-text: #1a1a1a;
+  --color-primary: #0070f3;
+  --color-secondary: #666666;
+  --color-border: #e5e5e5;
+  --color-muted: #6b7280;
+  
+  &[data-theme="dark"] {
+    --color-background: #1a1a1a;
+    --color-text: #ffffff;
+    --color-primary: #3b82f6;
+    --color-secondary: #9ca3af;
+    --color-border: #2d2d2d;
+    --color-muted: #9ca3af;
+  }
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-inter);
+  background-color: var(--color-background);
+  color: var(--color-text);
+  line-height: 1.6;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+// Layout
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+// Header
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background-color: var(--color-background);
+  border-bottom: 1px solid var(--color-border);
+  backdrop-filter: blur(10px);
+
+  &__container {
+    display: flex;
+    align-items: center;
+    height: 4rem;
+  }
+
+  &__logo {
+    margin-right: 2rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: var(--color-text);
+  }
+
+  &__nav {
+    display: flex;
+    gap: 1.5rem;
+
+    a {
+      color: var(--color-text);
+      text-decoration: none;
+      font-size: 0.875rem;
+      
+      &:hover {
+        color: var(--color-primary);
+      }
+    }
+  }
+
+  &__theme-toggle {
+    margin-left: auto;
+    background: none;
+    border: none;
+    color: var(--color-text);
+    cursor: pointer;
+    padding: 0.5rem;
+
+    &:hover {
+      color: var(--color-primary);
+    }
+  }
+}
+
+// Hero Section
+.hero {
+  position: relative;
+  height: 60vh;
+  background: var(--color-primary);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  &__content {
+    max-width: 800px;
+    padding: 0 1rem;
+  }
+
+  &__title {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+
+  &__description {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+  }
+}
